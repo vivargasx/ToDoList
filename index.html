@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/reset.css">
+
+    <title>Lista de Tarefas</title>
+</head>
+
+<body>
+    
+    <div class="tema">
+        <input type="checkbox" class="checkbox" id="btn_tema">
+        <label class="label" for="btn_tema">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+        </label>
+    </div>
+    
+    <div class="container" id="container">
+        <H1>Lista de Tarefas</H1>
+
+        <input class="input_Tarefas" placeholder="Adicione uma tarefa...">
+        <button class="btn_Add_Tarefa">Adicionar</button>
+        
+        <ul class="lista_tarefas">
+            
+        </ul>
+    </div>
+    
+    <script src="https://kit.fontawesome.com/998c60ef77.js"></script>
+
+    <script src="./src/js/index.js"></script>
+    <script src="./src/js/tema_script.js"></script>
+</body>
+
+
+</html>

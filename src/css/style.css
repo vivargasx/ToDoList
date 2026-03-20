@@ -1,0 +1,276 @@
+/* CORES */
+:root {
+    --primary-color: #489b60;
+    --hover-color: #51bd6f;
+    
+    --light-mode-input: #51bd6f;
+    --light-mode: #ffffff;
+    --light-mode-color: #2bc2f0;
+    --light-mode-container: #d1d1d1;
+    --light-mode-check: #838282;
+
+    --dark-mode: #1c152c;
+    --dark-mode-color: #4f3494;
+    --dark-mode-hover: #3fdabd;
+    --dark-mode-container: #2c2c2c;
+    --dark-mode-check: #474747;
+
+    --dark-mode-btn-primary: #53b3a1;
+    --dark-mode-btn-secondary: #3fdabd;
+}
+
+body {
+    background-color: var(--light-mode);
+}
+
+.container {
+    background-color: var(--light-mode-container);
+
+    width: 500px;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 135px auto 0;
+}
+
+.input_Tarefas {
+    border: none;
+    border-radius: 13px;
+
+    width: 300px;
+    height: 40px;
+    padding-left: 13px;
+
+    transition: border-color 0.2s ease-in-out;
+}
+
+.input_Tarefas:focus {
+    border: 2px solid var(--light-mode-input);    
+}
+
+.btn_Add_Tarefa {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    
+    border: none;
+    border-radius: 15px;
+    
+    padding: 0 15px;
+    height: 40px;
+    margin-left: 64px;
+
+    cursor: pointer;
+}
+
+.btn_Add_Tarefa:hover {
+    background-color: var(--hover-color);
+}
+
+.btn_Add_Tarefa:active {
+    opacity: 0.7;
+}
+
+.lista_tarefas {
+    width: 100%;
+
+    list-style: none; 
+    margin-top: 30px;
+}
+
+.tarefa {
+    background-color: #f2f2f2;
+    box-shadow:1px 3px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 0 15px;
+
+    height: 60px;
+    margin-bottom: 22px;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+img {
+    height: 23px;
+    opacity: 0;
+    
+    transition: opacity 0.4s ease-in-out;
+}
+
+.tarefa:hover img {
+    opacity: 1;    
+}
+
+
+/* Estilos temas */
+body {
+    transition: background 0.2s linear;
+}
+
+body.dark {
+    background-color: var(--dark-mode);
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.tema {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+    margin-top: 40px;
+}
+
+.label {
+    background-color: var(--dark-mode-container);
+    border-radius: 48px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 6px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    height: 22px;
+    width: 22px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
+}
+
+.fa-moon {
+    color: var(--dark-mode-container);
+}
+
+.fa-sun {
+    color: #E9B824;
+}
+
+
+/* Estilos para o modo claro (tema light)*/
+.light-mode .container {
+    background-color: var(--light-mode-container);
+}
+
+.light-mode .input_Tarefas {
+    border-color: var(--primary-color);
+}
+
+.light-mode .btn_Add_Tarefa {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.light-mode .lista_tarefas {
+    background-color: #f2f2f2;
+}
+
+.light-mode .tarefa {
+    background-color: #f2f2f2;
+}
+
+.itemConcluido {
+    background-color: var(--light-mode-check);
+    text-decoration: line-through;  
+
+    color: #383838;
+}
+
+
+/* Estilos para o modo escuro (tema dark) */
+.dark-mode .label {
+    background-color: #ffffff;
+}
+
+.dark-mode .container {
+    background-color: var(--dark-mode-container);
+}
+
+.dark-mode .input_Tarefas {
+    background-color: #868282;
+    color: white;
+}
+
+.dark-mode .input_Tarefas::placeholder {
+    color: #d1d1d1;
+}
+
+.dark-mode .input_Tarefas:focus {
+    border: 2px solid var(--dark-mode-hover);    
+}
+
+.dark-mode .btn_Add_Tarefa {
+    background-color: var(--dark-mode-btn-primary);
+    color: #ffffff;
+}
+
+.dark-mode .btn_Add_Tarefa:hover {
+    background-color: var(--dark-mode-btn-secondary);
+}
+
+.dark-mode .tarefa {
+    background-color: #868282;
+    box-shadow:1px 3px 10px rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+}
+
+.dark-mode .label .ball {
+    background-color: var(--dark-mode-container);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    height: 22px;
+    width: 22px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.dark-mode .itemConcluido {
+    background-color: var(--dark-mode-check);
+    text-decoration: line-through;
+
+    color: #111111;
+}
+
+
+.msg-erro {
+    color: rgb(235, 69, 69);
+    font-weight: 500;
+}
+
+
+h1 {
+    text-shadow: -4px 3px 5px rgba(0,0,0,0.15);
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+
+    font-weight: bold;
+}
+

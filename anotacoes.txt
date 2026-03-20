@@ -1,0 +1,64 @@
+CSS:
+
+Ao definir margins (left,right) deixo o meu item no centro
+podendo utilizar em uma só linha margin => (margin top) (margin left e right) (margin bottom);
+
+margin-left: auto;
+margin-right: auto;
+margin-top: 125px;
+
+Usando essas formatações é a mesma coisa que:
+
+margin: 125px auto 0;
+
+**********************************************************
+
+
+Usando "padding: 0 15px;" estou definindo (top e bottom como 0) e (padding left e right de 15px)
+
+
+**********************************************************
+
+
+JS:
+
+Na minha function mostrarTarefas();
+Ao usar o foreach para percorrer toda a minha array, coloquei o paramêtro (index) para me mostrar qual a posição do item na array que está sendo selecionado.
+
+Assim podendo chamar a minha function deletarItem(index) usando esse parâmetro.
+Sabendo exatamento qual item estou selecionando para deletar.
+
+
+
+Com o método splice "listaDeTarefas.splice(index, 1);" 
+Estou dizendo para ele identificar a posição pelo index e deletar apenas o item selecionado, por isso temos o (index, 1)
+
+
+Ao criar um novo objeto estou colocando o check(concluido) como false a cada nova tarefa adicionada:
+
+function adicionarTarefaArray() {
+    listaDeTarefas.push({
+        tarefa: input.value,
+        check: false
+    });
+
+    limparInput();
+    mostrarTarefas();
+}
+
+Assim ao puxar a minha function concluirTarefa();
+
+
+
+
+
+localStorage.setItem('lista', JSON.stringify(listaDeTarefas));
+
+function recarregarTarefas () {
+    const tarefasLocalStorage = localStorage.getItem('lista');
+
+    listaDeTarefas = JSON.parse(tarefasLocalStorage);
+    console.log(tarefasLocalStorage);
+
+    mostrarTarefas();
+}
